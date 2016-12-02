@@ -1,0 +1,86 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background: rgb(243, 242, 255);
+}
+
+@mixin square($dimension) {
+  width: $dimension;
+  height: $dimension;
+}
+
+@mixin clearfix {
+  &:before, &:after {
+    display: table;
+    content: '';
+    clear: both;
+  }
+}
+
+#turt-mcsquirt {
+  @include square(60px);
+  img {
+    width: 100%;
+  }
+}
+
+#alfalfa {
+  margin: 0 auto;
+  @include square(50px);
+  img {
+    width: 100%;
+  }
+}
+
+#app {
+  text-align: center;
+}
+
+#maze {
+
+  display: inline-block;
+  padding: 30px;
+
+  .maze-row {
+
+    @include clearfix();
+
+    .maze-cell {
+
+      background-image: url(/public/images/grass.jpg);
+      background-size: cover;
+
+      $sides: ('top', 'bottom', 'left', 'right');
+
+      @each $side in $sides {
+        &.wall-#{$side} {
+          border-#{$side}: 2px solid black;
+        }
+      }
+
+      border-radius: 2px;
+
+      float: left;
+      @include square(60px);
+
+    }
+
+  }
+
+}
+
+#win {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: white;
+  margin: 0;
+  text-align: center;
+  font-family: "Helvetica Neue";
+  font-size: 52px;
+}
+
