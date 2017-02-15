@@ -13,8 +13,7 @@
     "generate-maze": "^0.1.0",
     "maze-generator": "^0.1.2",
     "react": "^15.4.1",
-    "react-dom": "^15.4.1",
-    "redux": "^3.6.0"
+    "react-dom": "^15.4.1"
   },
   "devDependencies": {
     "babel-core": "^6.18.2",
